@@ -3,10 +3,10 @@ import {
   ChevronRight,
   Twitter,
   Github,
-  Discord,
   Globe,
   ArrowUpRight,
   Coins,
+  MessageSquare,
 } from 'lucide-react';
 
 function useIntersectionObserver(options = {}) {
@@ -63,7 +63,7 @@ function App() {
   }, [setElements]);
 
   useEffect(() => {
-    entries.forEach((entry) => {
+    entries.forEach((entry: { isIntersecting: any; target: { classList: { add: (arg0: string) => void; }; }; }) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
       }
@@ -380,7 +380,7 @@ const sendCoins = async (destination, amount) => {
                   href="#"
                   className="neon-box p-2 hover:scale-110 transition-transform"
                 >
-                  <Discord className="w-5 h-5 text-[#009CDE]" />
+                  <MessageSquare className="w-5 h-5 text-[#009CDE]" />
                 </a>
                 <a
                   href="#"
@@ -396,7 +396,6 @@ const sendCoins = async (destination, amount) => {
                 </a>
               </div>
             </div>
-          </div>
 
           {/* Bottom Bar */}
           <div className="mt-12 pt-8 border-t border-[#009CDE]/20 relative z-10">
