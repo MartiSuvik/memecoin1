@@ -345,5 +345,6 @@ const sendCoins = async (destination, amount) => {
       </footer>
     </div>
   );
+}
 
 export default App;
