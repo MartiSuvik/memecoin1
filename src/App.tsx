@@ -255,6 +255,95 @@ const sendCoins = async (destination, amount) => {
       </div>
     </div>
   );
-}
+
+      {/* Footer */}
+      <footer className="relative mt-16 border-t border-[#009CDE]/20">
+        <div className="space-overlay opacity-50" />
+        <div className="container mx-auto px-4 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+            {/* Brand Column */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <Coins className="w-8 h-8 text-[#BA9F33]" />
+                <span className="text-2xl font-bold text-[#BA9F33]">AnyCoin</span>
+              </div>
+              <p className="text-gray-400 text-sm">
+                Revolutionizing interstellar commerce through decentralized blockchain technology.
+              </p>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-lg font-bold mb-4 text-white">Quick Links</h4>
+              <ul className="space-y-2">
+                {['Whitepaper', 'Documentation', 'Statistics', 'Network Status'].map(link => (
+                  <li key={link}>
+                    <a href="#" className="text-gray-400 hover:text-[#009CDE] transition-colors flex items-center gap-1 group">
+                      {link}
+                      <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Resources */}
+            <div>
+              <h4 className="text-lg font-bold mb-4 text-white">Resources</h4>
+              <ul className="space-y-2">
+                {['Get Started', 'Learn', 'FAQ', 'Support'].map(link => (
+                  <li key={link}>
+                    <a href="#" className="text-gray-400 hover:text-[#009CDE] transition-colors flex items-center gap-1 group">
+                      {link}
+                      <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Community */}
+            <div>
+              <h4 className="text-lg font-bold mb-4 text-white">Join the Community</h4>
+              <div className="flex gap-4">
+                <a href="#" className="neon-box p-2 hover:scale-110 transition-transform">
+                  <Twitter className="w-5 h-5 text-[#009CDE]" />
+                </a>
+                <a href="#" className="neon-box p-2 hover:scale-110 transition-transform">
+                  <Discord className="w-5 h-5 text-[#009CDE]" />
+                </a>
+                <a href="#" className="neon-box p-2 hover:scale-110 transition-transform">
+                  <Github className="w-5 h-5 text-[#009CDE]" />
+                </a>
+                <a href="#" className="neon-box p-2 hover:scale-110 transition-transform">
+                  <Globe className="w-5 h-5 text-[#009CDE]" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="mt-12 pt-8 border-t border-[#009CDE]/20 relative z-10">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <p className="text-gray-400 text-sm">
+                © {new Date().getFullYear()} AnyCoin. All rights reserved.
+              </p>
+              <div className="flex gap-6">
+                <a href="#" className="text-gray-400 hover:text-[#009CDE] text-sm transition-colors">
+                  Privacy Policy
+                </a>
+                <a href="#" className="text-gray-400 hover:text-[#009CDE] text-sm transition-colors">
+                  Terms of Service
+                </a>
+                <a href="#" className="text-gray-400 hover:text-[#009CDE] text-sm transition-colors">
+                  Cookie Policy
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
 
 export default App;
