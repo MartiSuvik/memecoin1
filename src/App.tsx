@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Zap, Shield, Coins, Users, ChevronRight } from 'lucide-react';
+import { ChevronRight, Twitter, Github, Discord, Globe, ArrowUpRight } from 'lucide-react';
 
 function useIntersectionObserver(options = {}) {
   const [elements, setElements] = useState([]);
@@ -255,6 +255,7 @@ const sendCoins = async (destination, amount) => {
       </div>
     </div>
   );
+
 
       {/* Footer */}
       <footer className="relative mt-16 border-t border-[#009CDE]/20">
