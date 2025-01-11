@@ -62,11 +62,27 @@ function App() {
     });
   }, [entries]);
 
-  const features = [
-    { name: 'Fast Transactions', icon: Zap },
-    { name: 'Secure Network', icon: Shield },
-    { name: 'Low Fees', icon: Coins },
-    { name: 'Active Community', icon: Users }
+const features = [
+    { 
+      name: 'Fast Transactions', 
+      animation: "https://lottie.host/9608955a-da0c-47ae-80bc-df51f0aca3a4/fyPFDcVLfx.json",
+      type: "dotlottie"
+    },
+    { 
+      name: 'Secure Network', 
+      animation: "https://lottie.host/0b0bdf2a-cf62-41ae-9ba2-1034c9b6cd33/dHGUra933v.json",
+      type: "lottie"
+    },
+    { 
+      name: 'Low Fees', 
+      animation: "https://lottie.host/0cec388f-6a29-404e-817d-036ac83b1089/VHOrIyrjaI.json",
+      type: "lottie"
+    },
+    { 
+      name: 'Active Community', 
+      animation: "https://lottie.host/92b1c463-fd66-46dc-aa7a-e4b379cd51a1/jq72eWBJeg.json",
+      type: "lottie"
+    }
   ];
 
   const steps = [
@@ -141,18 +157,40 @@ function App() {
       </div>
 
       {/* Features Grid */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {features.map(({ name, icon: Icon }, index) => (
-            <div key={name} className={`feature-card fade-in-up delay-${index * 100}`}>
-              <div className="icon-wrapper">
-                <Icon className="w-full h-full text-[#009CDE] icon-3d" />
-              </div>
-              <h3 className="text-xl font-semibold text-center">{name}</h3>
-            </div>
-          ))}
+<div className="container mx-auto px-4 py-16">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {features.map(({ name, animation, type }, index) => (
+        <div key={name} className={`feature-card fade-in-up delay-${index * 100}`}>
+          <div className="icon-wrapper flex justify-center items-center" style={{ height: '300px', width: '100%' }}>
+            {type === "dotlottie" ? (
+              <dotlottie-player
+                src={animation}
+                background="transparent"
+                speed="1"
+                style={{ width: '300px', height: '300px' }}
+                direction="1"
+                playMode="normal"
+                loop
+                autoplay
+              ></dotlottie-player>
+            ) : (
+              <lottie-player
+                src={animation}
+                background="transparent"
+                speed="1"
+                style={{ width: '300px', height: '300px' }}
+                loop
+                autoplay
+                direction="1"
+                mode="normal"
+              ></lottie-player>
+            )}
+          </div>
+          <h3 className="text-xl font-semibold text-center mt-4">{name}</h3>
         </div>
-      </div>
+      ))}
+    </div>
+  </div>
 
       {/* What is AnyCoin Section */}
       <div className="container mx-auto px-4 py-16">
