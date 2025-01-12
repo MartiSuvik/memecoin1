@@ -8,7 +8,6 @@ import {
   Coins,
   MessageSquare,
 } from 'lucide-react';
-import ResponsiveVideo from './components/ResponsiveVideo';
 
 function useIntersectionObserver(options = {}) {
   const [elements, setElements] = useState([]);
@@ -257,20 +256,6 @@ function App() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
-                {/* Video Section */}
-                <div className="container mx-auto py-12 sm:py-16">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-8 neon-glow text-center fade-in-up">
-            See AnyCoin in Action
-          </h2>
-          <div className="fade-in-up delay-100">
-            <ResponsiveVideo
-              src="https://cdn.example.com/anycoin-demo.mp4"
-              poster="https://cdn.example.com/anycoin-poster.jpg"
-              title="AnyCoin Demo Video"
-            />
           </div>
         </div>
 
