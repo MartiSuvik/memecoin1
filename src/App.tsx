@@ -124,44 +124,45 @@ function App() {
         <div className="tech-grid absolute inset-0" />
 
         {/* Hero Section */}
-        <div className="relative min-h-screen flex flex-col items-center justify-center">
+        <div className="relative min-h-[100svh] flex flex-col items-center justify-center">
           <div className="absolute inset-0 z-0">
             <img
               src="https://i.postimg.cc/xTVrbg1P/Black-Car-Sale-Promo-Instagram-Post-1.gif"
               alt="Background Animation"
               className="w-full h-full object-cover opacity-80"
+              style={{ aspectRatio: '16/9', objectPosition: 'center' }}
             />
           </div>
 
-          <div className="absolute top-0 left-0 w-full p-4 flex justify-between items-center z-10">
-            <div className="flex items-center gap-2 fade-in-up">
-              <Coins className="w-6 h-6 sm:w-8 sm:h-8 text-[#BA9F33]" />
-              <span className="text-xl sm:text-2xl font-bold text-[#BA9F33]">AnyCoin</span>
+          <div className="absolute top-0 left-0 w-full p-3 sm:p-4 flex justify-between items-center z-10">
+            <div className="flex items-center gap-1.5 sm:gap-2 fade-in-up">
+              <Coins className="w-5 h-5 sm:w-8 sm:h-8 text-[#BA9F33]" />
+              <span className="text-lg sm:text-2xl font-bold text-[#BA9F33]">AnyCoin</span>
             </div>
-            <div className="price-ticker bg-[#009CDE] px-3 py-1.5 sm:px-4 sm:py-2 rounded-full fade-in-up delay-200">
-              <span className="text-sm sm:text-base text-white font-bold">{price} ANY</span>
+            <div className="price-ticker bg-[#009CDE] px-2 py-1 sm:px-4 sm:py-2 rounded-full fade-in-up delay-200">
+              <span className="text-xs sm:text-base text-white font-bold">{price} ANY</span>
             </div>
           </div>
 
           <div className="floating text-center px-4 z-10 max-w-[90vw] sm:max-w-none">
-            <div className="icon-wrapper mb-8 sm:mb-12 fade-in-up">
-              <Coins className="w-24 h-24 sm:w-32 sm:h-32 text-[#BA9F33] icon-3d" />
+            <div className="icon-wrapper mb-6 sm:mb-12 fade-in-up">
+              <Coins className="w-16 h-16 sm:w-32 sm:h-32 text-[#BA9F33] icon-3d" />
             </div>
-            <h1 className="text-4xl sm:text-6xl font-bold mb-4 neon-glow fade-in-up delay-100">
+            <h1 className="text-3xl sm:text-6xl font-bold mb-3 sm:mb-4 neon-glow fade-in-up delay-100">
               AnyCoin
             </h1>
-            <p className="text-lg sm:text-xl mb-6 sm:mb-8 text-gray-300 fade-in-up delay-200">
+            <p className="text-base sm:text-xl mb-4 sm:mb-8 text-gray-300 fade-in-up delay-200">
               The Future of Interstellar Currency
             </p>
-            <button className="w-full sm:w-auto bg-[#009CDE] text-white px-6 sm:px-8 py-3 rounded-full text-lg font-semibold neon-box hover:scale-105 transition-transform fade-in-up delay-300">
+            <button className="w-full sm:w-auto bg-[#009CDE] text-white px-4 sm:px-8 py-2 sm:py-3 rounded-full text-base sm:text-lg font-semibold neon-box hover:scale-105 transition-transform fade-in-up delay-300">
               Launch Mission
             </button>
           </div>
         </div>
 
         {/* Stats Section */}
-        <div className="container mx-auto px-4 py-12 sm:py-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8">
+        <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-8">
             {[
               { title: 'Market Cap', value: marketCap },
               { title: 'Daily Volume', value: volume },
@@ -169,10 +170,10 @@ function App() {
             ].map((stat, index) => (
               <div
                 key={stat.title}
-                className={`neon-box p-4 sm:p-6 fade-in-up delay-${index * 100}`}
+                className={`neon-box p-3 sm:p-6 fade-in-up delay-${index * 100}`}
               >
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">{stat.title}</h3>
-                <p className="text-xl sm:text-2xl font-bold text-[#BA9F33]">
+                <h3 className="text-base sm:text-xl font-semibold mb-1 sm:mb-2">{stat.title}</h3>
+                <p className="text-lg sm:text-2xl font-bold text-[#BA9F33]">
                   {stat.value}
                 </p>
               </div>
@@ -181,8 +182,8 @@ function App() {
         </div>
 
         {/* Features Grid */}
-        <div className="container mx-auto px-4 py-12 sm:py-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8">
+        <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-16">
+          <div className="grid grid-cols-2 gap-3 sm:gap-8">
             {features.map(({ name, animation, type }, index) => (
               <div
                 key={name}
@@ -190,14 +191,14 @@ function App() {
               >
                 <div
                   className="icon-wrapper flex justify-center items-center"
-                  style={{ height: '250px', width: '100%' }}
+                  style={{ height: '150px', width: '100%' }}
                 >
                   {type === 'dotlottie' ? (
                     <dotlottie-player
                       src={animation}
                       background="transparent"
                       speed="1"
-                      style={{ width: '250px', height: '250px' }}
+                      style={{ width: '150px', height: '150px' }}
                       direction="1"
                       playMode="normal"
                       loop
@@ -208,7 +209,7 @@ function App() {
                       src={animation}
                       background="transparent"
                       speed="1"
-                      style={{ width: '250px', height: '250px' }}
+                      style={{ width: '150px', height: '150px' }}
                       loop
                       autoplay
                       direction="1"
@@ -216,7 +217,7 @@ function App() {
                     ></lottie-player>
                   )}
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-center mt-4">
+                <h3 className="text-sm sm:text-xl font-semibold text-center mt-2 sm:mt-4">
                   {name}
                 </h3>
               </div>
@@ -225,20 +226,20 @@ function App() {
         </div>
 
         {/* What is AnyCoin Section */}
-        <div className="container mx-auto px-4 py-12 sm:py-16">
-          <div className="neon-box p-6 sm:p-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
+        <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-16">
+          <div className="neon-box p-4 sm:p-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 items-center">
               <div className="fade-in-up">
-                <h2 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 neon-glow">
+                <h2 className="text-2xl sm:text-4xl font-bold mb-3 sm:mb-6 neon-glow">
                   What is AnyCoin?
                 </h2>
-                <p className="text-base sm:text-lg mb-4 sm:mb-6 leading-relaxed">
+                <p className="text-sm sm:text-lg mb-3 sm:mb-6 leading-relaxed">
                   AnyCoin is a revolutionary digital currency designed for the
                   future of interstellar commerce. Built on advanced blockchain
                   technology, it offers lightning-fast transactions across the
                   galaxy with minimal fees.
                 </p>
-                <p className="text-base sm:text-lg leading-relaxed">
+                <p className="text-sm sm:text-lg leading-relaxed">
                   Our decentralized network ensures secure, transparent
                   operations while maintaining the speed needed for modern
                   space-age transactions. Join thousands of users already
@@ -252,6 +253,7 @@ function App() {
                     alt="AnyCoin Illustration"
                     className="w-full h-auto object-cover rounded-lg floating"
                     loading="lazy"
+                    style={{ aspectRatio: '16/9', objectPosition: 'center' }}
                   />
                 </div>
               </div>
@@ -260,34 +262,34 @@ function App() {
         </div>
 
         {/* Getting Started Section */}
-        <div className="container mx-auto px-4 py-12 sm:py-16">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 neon-glow text-center fade-in-up">
+        <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-16">
+          <h2 className="text-2xl sm:text-4xl font-bold mb-6 sm:mb-12 neon-glow text-center fade-in-up">
             Getting Started
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-8">
             {steps.map((step, index) => (
               <div
                 key={step.number}
-                className={`neon-box p-4 sm:p-6 hover:scale-105 transition-duration-300 fade-in-up delay-${
+                className={`neon-box p-3 sm:p-6 hover:scale-105 transition-duration-300 fade-in-up delay-${
                   index * 100
                 }`}
               >
-                <div className="flex items-center mb-4">
-                  <span className="text-2xl sm:text-3xl font-bold text-[#BA9F33] mr-2">
+                <div className="flex items-center mb-3 sm:mb-4">
+                  <span className="text-xl sm:text-3xl font-bold text-[#BA9F33] mr-2">
                     {step.number}
                   </span>
-                  <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-[#009CDE]" />
+                  <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6 text-[#009CDE]" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">{step.title}</h3>
-                <p className="text-sm sm:text-base text-gray-300">{step.description}</p>
+                <h3 className="text-base sm:text-xl font-bold mb-2 sm:mb-4">{step.title}</h3>
+                <p className="text-xs sm:text-base text-gray-300">{step.description}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Code Preview */}
-        <div className="container mx-auto px-4 py-12 sm:py-16">
-          <div className="neon-box p-6 sm:p-8 fade-in-up">
+        <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-16">
+          <div className="neon-box p-4 sm:p-8 fade-in-up">
             <pre className="text-xs sm:text-sm text-[#00F3FF] overflow-x-auto">
               <code>{`// Initiate interstellar transaction
 const sendCoins = async (destination, amount) => {
@@ -305,19 +307,19 @@ const sendCoins = async (destination, amount) => {
       </div>
 
       {/* Footer */}
-      <footer className="relative mt-12 sm:mt-16 border-t border-[#009CDE]/20">
+      <footer className="relative mt-8 sm:mt-16 border-t border-[#009CDE]/20">
         <div className="space-overlay opacity-50" />
-        <div className="container mx-auto px-4 py-8 sm:py-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 relative z-10">
+        <div className="container mx-auto px-3 sm:px-4 py-6 sm:py-12">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 relative z-10">
             {/* Brand Column */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-2">
-                <Coins className="w-6 h-6 sm:w-8 sm:h-8 text-[#BA9F33]" />
-                <span className="text-xl sm:text-2xl font-bold text-[#BA9F33]">
+            <div className="space-y-3 sm:space-y-4">
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <Coins className="w-5 h-5 sm:w-8 sm:h-8 text-[#BA9F33]" />
+                <span className="text-lg sm:text-2xl font-bold text-[#BA9F33]">
                   AnyCoin
                 </span>
               </div>
-              <p className="text-sm text-gray-400">
+              <p className="text-xs sm:text-sm text-gray-400">
                 Revolutionizing interstellar commerce through decentralized
                 blockchain technology.
               </p>
@@ -325,8 +327,8 @@ const sendCoins = async (destination, amount) => {
 
             {/* Quick Links */}
             <div>
-              <h4 className="text-base sm:text-lg font-bold mb-4 text-white">Quick Links</h4>
-              <ul className="space-y-2">
+              <h4 className="text-sm sm:text-lg font-bold mb-3 sm:mb-4 text-white">Quick Links</h4>
+              <ul className="space-y-1.5 sm:space-y-2">
                 {[
                   'Whitepaper',
                   'Documentation',
@@ -336,7 +338,7 @@ const sendCoins = async (destination, amount) => {
                   <li key={link}>
                     <a
                       href="#"
-                      className="text-sm sm:text-base text-gray-400 hover:text-[#009CDE] transition-colors flex items-center gap-1 group"
+                      className="text-xs sm:text-base text-gray-400 hover:text-[#009CDE] transition-colors flex items-center gap-1 group"
                     >
                       {link}
                       <ArrowUpRight className="w-3 h-3 sm:w-4 sm:h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -348,13 +350,13 @@ const sendCoins = async (destination, amount) => {
 
             {/* Resources */}
             <div>
-              <h4 className="text-base sm:text-lg font-bold mb-4 text-white">Resources</h4>
-              <ul className="space-y-2">
+              <h4 className="text-sm sm:text-lg font-bold mb-3 sm:mb-4 text-white">Resources</h4>
+              <ul className="space-y-1.5 sm:space-y-2">
                 {['Get Started', 'Learn', 'FAQ', 'Support'].map((link) => (
                   <li key={link}>
                     <a
                       href="#"
-                      className="text-sm sm:text-base text-gray-400 hover:text-[#009CDE] transition-colors flex items-center gap-1 group"
+                      className="text-xs sm:text-base text-gray-400 hover:text-[#009CDE] transition-colors flex items-center gap-1 group"
                     >
                       {link}
                       <ArrowUpRight className="w-3 h-3 sm:w-4 sm:h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -366,60 +368,60 @@ const sendCoins = async (destination, amount) => {
 
             {/* Community */}
             <div>
-              <h4 className="text-base sm:text-lg font-bold mb-4 text-white">
+              <h4 className="text-sm sm:text-lg font-bold mb-3 sm:mb-4 text-white">
                 Join the Community
               </h4>
-              <div className="flex gap-3 sm:gap-4">
+              <div className="flex gap-2 sm:gap-4">
                 <a
                   href="#"
-                  className="neon-box p-2 hover:scale-110 transition-transform"
+                  className="neon-box p-1.5 sm:p-2 hover:scale-110 transition-transform"
                 >
-                  <Twitter className="w-4 h-4 sm:w-5 sm:h-5 text-[#009CDE]" />
+                  <Twitter className="w-3 h-3 sm:w-5 sm:h-5 text-[#009CDE]" />
                 </a>
                 <a
                   href="#"
-                  className="neon-box p-2 hover:scale-110 transition-transform"
+                  className="neon-box p-1.5 sm:p-2 hover:scale-110 transition-transform"
                 >
-                  <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 text-[#009CDE]" />
+                  <MessageSquare className="w-3 h-3 sm:w-5 sm:h-5 text-[#009CDE]" />
                 </a>
                 <a
                   href="#"
-                  className="neon-box p-2 hover:scale-110 transition-transform"
+                  className="neon-box p-1.5 sm:p-2 hover:scale-110 transition-transform"
                 >
-                  <Github className="w-4 h-4 sm:w-5 sm:h-5 text-[#009CDE]" />
+                  <Github className="w-3 h-3 sm:w-5 sm:h-5 text-[#009CDE]" />
                 </a>
                 <a
                   href="#"
-                  className="neon-box p-2 hover:scale-110 transition-transform"
+                  className="neon-box p-1.5 sm:p-2 hover:scale-110 transition-transform"
                 >
-                  <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-[#009CDE]" />
+                  <Globe className="w-3 h-3 sm:w-5 sm:h-5 text-[#009CDE]" />
                 </a>
               </div>
             </div>
           </div>
 
           {/* Bottom Bar */}
-          <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[#009CDE]/20 relative z-10">
-            <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-              <p className="text-xs sm:text-sm text-gray-400">
+          <div className="mt-6 sm:mt-12 pt-4 sm:pt-8 border-t border-[#009CDE]/20 relative z-10">
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
+              <p className="text-[10px] sm:text-sm text-gray-400">
                 © {new Date().getFullYear()} AnyCoin. All rights reserved.
               </p>
-              <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+              <div className="flex flex-wrap justify-center gap-3 sm:gap-6">
                 <a
                   href="#"
-                  className="text-xs sm:text-sm text-gray-400 hover:text-[#009CDE] transition-colors"
+                  className="text-[10px] sm:text-sm text-gray-400 hover:text-[#009CDE] transition-colors"
                 >
                   Privacy Policy
                 </a>
                 <a
                   href="#"
-                  className="text-xs sm:text-sm text-gray-400 hover:text-[#009CDE] transition-colors"
+                  className="text-[10px] sm:text-sm text-gray-400 hover:text-[#009CDE] transition-colors"
                 >
                   Terms of Service
                 </a>
                 <a
                   href="#"
-                  className="text-xs sm:text-sm text-gray-400 hover:text-[#009CDE] transition-colors"
+                  className="text-[10px] sm:text-sm text-gray-400 hover:text-[#009CDE] transition-colors"
                 >
                   Cookie Policy
                 </a>
